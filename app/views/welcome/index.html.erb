@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="jumbotron">
+    <center><h1>CHAT</h1></center>
+    <center><p>USANDO RUBY ON RAILS CON ACTION CABLE Y REDIS DB</p></center>
+  </div>
+
+  <% if !flash[:notice].nil? %>
+    <div class="alert alert-danger"> 
+      <center><%= flash[:notice]['error'] %></center>
+    </div>
+  <% end %>
+
+  <center><h1>INGRESE USANDO SU NOMBRE DE USUARIO</h1></center>
+  <br />
+
+  <div class="row">
+    <%= form_tag create_user_path do -%>	 
+	    <div class="col-md-10">
+	       <div class="form-group">
+	       	<%= text_field_tag :username, '', class: 'form-control', placeholder: 'INGRESE EL NOMBDE DE USUARIO' %>
+	       </div>
+	    </div>
+	    <div class="col-md-2">
+	       <%= submit_tag 'INGRESAR', class: 'btn btn-primary' %>
+	    </div> 
+    <% end -%>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+<div class="row">
+  <%= form_for message, remote: true do |f| %>
+
+    <div class="col-md-11">
+      <%= f.text_area :content, class: "form-control", data: {textarea: "message"}, placeholder: 'INGRESE SU MENSAJE' %>
+    </div>
+    <div class="col-md-1">
+      <%= f.hidden_field :chatroom_id, value: chatroom.id %>
+      <%= f.submit "ENVIAR", class: "btn btn-primary", data: {send: "message"} %>
+    </div>
+  <% end %>
+</div>

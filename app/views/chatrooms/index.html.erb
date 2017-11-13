@@ -1,0 +1,27 @@
+<div class="container" id="chatroom-title">
+
+  <center><h1>Salas de Chat disponibles</h1></center>
+  <br />
+
+  <div class="row" id="chatrooms">
+    <%= render partial: 'chatroom_form', locals: {chatroom: @chatroom} %>
+  </div>
+
+  <br />
+
+  <% if !flash[:notice].nil? %>
+    <div class="alert alert-success"> 
+      <center><%= flash[:notice]['error'] %></center>
+    </div>
+  <% end %>
+
+  <div id="chatroom-errors"></div>
+    
+  <div class="row" id="chats">      
+    <% if @chatrooms.any? %>
+      <%= render @chatrooms%>
+    <%else %>        
+      <p>SE EL PRIMERO EN CREAR UNA SALA DE CHAT</p>
+    <% end %>
+  </div>
+</div>

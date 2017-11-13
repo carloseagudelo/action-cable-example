@@ -1,0 +1,16 @@
+<div class="row">
+  <%= form_for chatroom, remote: true do |f| %>
+
+    <div class="col-md-11">
+      <div class="input-group">
+        <span class="input-group-addon">TEMA:</span>
+        <%= f.text_field :topic, class: "form-control"%>
+      </div>
+    </div>
+
+    <div class="col-md-1">
+      <%= f.submit 'CREAR SALA DE CHAT', class: "btn btn-primary", id: "create-chatroom" %>
+    </div>
+
+  <% end %>
+</div>
